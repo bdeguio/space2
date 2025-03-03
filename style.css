@@ -1,9 +1,9 @@
 /* General Page Styling */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+body.dark-mode {
     background-color: black;
     color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
 }
@@ -25,7 +25,7 @@ body {
     width: 200px;
 }
 
-/* Button Styling */
+/* Sidebar Button */
 .menu-button {
     background: none;
     border: none;
@@ -35,6 +35,31 @@ body {
     padding: 10px;
 }
 
+/* List Styling */
+#pdf-list {
+    display: none;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.sidebar.expanded #pdf-list {
+    display: block;
+}
+
+#pdf-list li {
+    margin-bottom: 10px;
+}
+
+#pdf-list a {
+    color: white;
+    text-decoration: none;
+}
+
+#pdf-list a:hover {
+    text-decoration: underline;
+}
+
 /* Main Content */
 .main-content {
     flex: 1;
@@ -42,13 +67,13 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-}
-#name-list {
-    display: none; /* Initially hidden */
-    list-style: none;
-    padding: 10px;
+    padding: 20px;
 }
 
-.sidebar.expanded #name-list {
-    display: block; /* Show when sidebar is expanded */
+/* PDF Viewer */
+iframe#pdf-viewer {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    display: none;
 }
