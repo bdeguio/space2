@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Webpage with Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="sidebar" id="sidebar">
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        <p id="sidebar-text" style="display: none;">Expanded Sidebar</p>
+        <ul id="pdf-list" style="display: none; list-style: none; padding: 10px;">
+            <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('pdf1.pdf')">PDF 1</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('pdf2.pdf')">PDF 2</a></li>
+        </ul>
+    </div>
+    <div class="main-content" id="main-content">
+        <h1>Black Webpage with Sidebar</h1>
+        <iframe id="pdf-viewer" src="" style="width: 100%; height: 100vh; border: none; display: none;"></iframe>
+    </div>
 
+    <script src="script.js"></script>
+</body>
+</html>
