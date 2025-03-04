@@ -1,37 +1,32 @@
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
-    const text = document.getElementById("sidebar-text");
     const pdfList = document.getElementById("pdf-list");
 
     if (sidebar.classList.contains("expanded")) {
         sidebar.classList.remove("expanded");
-        text.style.display = "none";
         pdfList.style.display = "none";
     } else {
         sidebar.classList.add("expanded");
-        text.style.display = "block";
         pdfList.style.display = "block";
     }
 }
 
 function loadPdf(pdfFile) {
     const pdfViewer = document.getElementById("pdf-viewer");
-    const closeBtn = document.getElementById("close-btn");
     const mainHeading = document.getElementById("main-heading");
 
     pdfViewer.style.display = "block";
-    closeBtn.style.display = "block";
-    mainHeading.style.display = "none"; // Hide heading when viewing PDF
+    mainHeading.style.display = "none"; // Hide heading when a PDF is opened
 
-    pdfViewer.src = pdfFile; // Assumes the PDFs are in the same directory as index.html
+    pdfViewer.src = pdfFile; // Load the selected PDF
 }
 
 function closePdfViewer() {
     const pdfViewer = document.getElementById("pdf-viewer");
-    const closeBtn = document.getElementById("close-btn");
     const mainHeading = document.getElementById("main-heading");
 
     pdfViewer.style.display = "none";
-    closeBtn.style.display = "none";
-    mainHeading.style.display = "block"; // Show heading again
+    mainHeading.style.display = "block"; // Show heading again when closing PDF
+
+    pdfViewer.src = ""; // Reset the iframe source
 }
