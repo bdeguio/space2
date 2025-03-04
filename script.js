@@ -1,40 +1,32 @@
-document.addEventListener("DOMContentLoaded", function() {
+function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
-    const toggleBtn = document.getElementById("toggle-btn");
+    const pdfList = document.getElementById("pdf-list");
+
+    if (sidebar.classList.contains("expanded")) {
+        sidebar.classList.remove("expanded");
+        pdfList.style.display = "none";
+    } else {
+        sidebar.classList.add("expanded");
+        pdfList.style.display = "block";
+    }
+}
+
+function loadPdf(pdfFile) {
     const pdfViewer = document.getElementById("pdf-viewer");
     const mainHeading = document.getElementById("main-heading");
-    const pdfLinks = document.querySelectorAll(".pdf-link");
-    const closeBtn = document.getElementById("close-btn");
 
-    toggleBtn.addEventListener("click", function() {
-        sidebar.classList.toggle("expanded");
-        if (sidebar.classList.contains("expanded")) {
-            pdfViewer.style.left = "200px";
-            pdfViewer.style.width = "calc(100vw - 200px)";
-        } else {
-            pdfViewer.style.left = "64px";
-            pdfViewer.style.width = "calc(100vw - 64px)";
-        }
-    });
+    pdfViewer.style.display = "block";
+    mainHeading.style.display = "none"; // Hide heading when a PDF is opened
 
-    pdfLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const pdfFile = this.getAttribute("data-pdf");
-            pdfViewer.src = pdfFile;
-            pdfViewer.style.display = "block";
-            mainHeading.style.display = "none";
-        });
-    });
+    pdfViewer.src = pdfFile; // Load the selected PDF
+}
 
-    closeBtn.addEventListener("click", function() {
-        pdfViewer.style.display = "none";
-        mainHeading.style.display = "block";
-        pdfViewer.src = "";
-    });
-});
-    
+function closePdfViewer() {
+    const pdfViewer = document.getElementById("pdf-viewer");
+    const mainHeading = document.getElementById("main-heading");
+
     pdfViewer.style.display = "none";
-    mainHeading.style.display = "block";
-    pdfViewer.src = "";
+    mainHeading.style.display = "block"; // Show heading again when closing PDF
+
+    pdfViewer.src = ""; // Reset the iframe source
 }
