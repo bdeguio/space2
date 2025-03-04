@@ -43,8 +43,9 @@ body.dark-mode {
     width: 100%;
 }
 
+/* Ensure the PDF list is visible when expanded */
 .sidebar.expanded #pdf-list {
-    display: block;
+    display: block !important; /* Force it to be displayed */
 }
 
 #pdf-list li {
