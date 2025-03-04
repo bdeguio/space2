@@ -1,29 +1,21 @@
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
     const text = document.getElementById("sidebar-text");
-    const nameList = document.getElementById("name-list");
-    const epubList = document.getElementById("epub-list");
+    const pdfList = document.getElementById("pdf-list");
 
     if (sidebar.classList.contains("expanded")) {
         sidebar.classList.remove("expanded");
         text.style.display = "none";
-        nameList.style.display = "none";
-        epubList.style.display = "none";
+        pdfList.style.display = "none";
     } else {
         sidebar.classList.add("expanded");
         text.style.display = "block";
-        nameList.style.display = "block";
-        epubList.style.display = "block";
+        pdfList.style.display = "block";
     }
 }
 
-function loadEpub(epub) {
-    const epubViewer = document.getElementById("epub-viewer");
-    epubViewer.style.display = "block";
-
-    if (epub === "epub1") {
-        epubViewer.src = "path/to/your/epub1.html"; // Replace with the actual path
-    } else if (epub === "epub2") {
-        epubViewer.src = "path/to/your/epub2.html"; // Replace with the actual path
-    }
+function loadPdf(pdfFile) {
+    const pdfViewer = document.getElementById("pdf-viewer");
+    pdfViewer.style.display = "block";
+    pdfViewer.src = pdfFile; // Assumes the PDFs are stored in the same directory as index.html
 }
