@@ -43,9 +43,8 @@ body.dark-mode {
     width: 100%;
 }
 
-/* Ensure the PDF list is visible when expanded */
 .sidebar.expanded #pdf-list {
-    display: block !important; /* Force it to be displayed */
+    display: block;
 }
 
 #pdf-list li {
@@ -61,6 +60,23 @@ body.dark-mode {
     text-decoration: underline;
 }
 
+/* Close Button in Sidebar */
+#close-btn {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sidebar.expanded #close-btn {
+    display: block;
+}
+
 /* Main Content */
 .main-content {
     flex: 1;
@@ -73,8 +89,11 @@ body.dark-mode {
 
 /* PDF Viewer */
 iframe#pdf-viewer {
-    width: 100%;
+    width: calc(100vw - 64px);
     height: 100vh;
     border: none;
     display: none;
+    position: absolute;
+    top: 0;
+    left: 64px;
 }
