@@ -16,6 +16,22 @@ function toggleSidebar() {
 
 function loadPdf(pdfFile) {
     const pdfViewer = document.getElementById("pdf-viewer");
+    const closeBtn = document.getElementById("close-btn");
+    const mainHeading = document.getElementById("main-heading");
+
     pdfViewer.style.display = "block";
-    pdfViewer.src = pdfFile; // Assumes the PDFs are stored in the same directory as index.html
+    closeBtn.style.display = "block";
+    mainHeading.style.display = "none"; // Hide heading when viewing PDF
+
+    pdfViewer.src = pdfFile; // Assumes the PDFs are in the same directory as index.html
+}
+
+function closePdfViewer() {
+    const pdfViewer = document.getElementById("pdf-viewer");
+    const closeBtn = document.getElementById("close-btn");
+    const mainHeading = document.getElementById("main-heading");
+
+    pdfViewer.style.display = "none";
+    closeBtn.style.display = "none";
+    mainHeading.style.display = "block"; // Show heading again
 }
