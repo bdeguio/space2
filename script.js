@@ -7,7 +7,7 @@ function toggleSidebar() {
         pdfList.style.display = "none";
     } else {
         sidebar.classList.add("expanded");
-        pdfList.style.display = "block";
+        pdfList.style.display = "block"; // Ensure the PDF list is displayed
     }
 }
 
