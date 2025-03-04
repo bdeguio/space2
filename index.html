@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Webpage</title>
+    <title>Black Webpage with Sidebar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
@@ -11,17 +11,19 @@
         <button class="menu-button" onclick="toggleSidebar()">☰</button>
         <p id="sidebar-text" style="display: none;">Expanded Sidebar</p>
         <ul id="pdf-list" style="display: none; list-style: none; padding: 10px;">
-            <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('2023ltr.pdf')">2023</a></li>
-            <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('2024ltr.pdf')">2024</a></li>
-            <button id="close-btn" onclick="closePdfViewer()" style="display: none; position: absolute; top: 10px; right: 20px; padding: 10px; background: red; color: white; border: none; cursor: pointer;">Close</button>
+            <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('pdf1.pdf')">PDF 1</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('pdf2.pdf')">PDF 2</a></li>
         </ul>
-        <button id="close-btn" onclick="closePdfViewer()" style="display: none; margin-top: 20px; padding: 10px; background: red; color: white; border: none; cursor: pointer;">Close</button>
+        <div id="close-container" style="display: none; width: 100%; text-align: center; margin-top: 20px;">
+            <button id="close-btn" onclick="closePdfViewer()" style="padding: 10px; background: red; color: white; border: none; cursor: pointer; width: 80%;">Close</button>
+        </div>
     </div>
     <div class="main-content" id="main-content">
-        <h1 id="main-heading">Space</h1>
+        <h1 id="main-heading">Black Webpage with Sidebar</h1>
         <iframe id="pdf-viewer" src="" style="width: calc(100vw - 64px); height: 100vh; border: none; display: none; position: absolute; top: 0; left: 64px;"></iframe>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
