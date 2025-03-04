@@ -1,30 +1,38 @@
-function toggleSidebar() {
+document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.getElementById("sidebar");
-    const pdfViewer = document.getElementById("pdf-viewer");
-    
-    if (sidebar.classList.contains("expanded")) {
-        sidebar.classList.remove("expanded");
-        pdfViewer.style.left = "64px";
-        pdfViewer.style.width = "calc(100vw - 64px)";
-    } else {
-        sidebar.classList.add("expanded");
-        pdfViewer.style.left = "200px";
-        pdfViewer.style.width = "calc(100vw - 200px)";
-    }
-}
-
-function loadPdf(pdfFile) {
+    const toggleBtn = document.getElementById("toggle-btn");
     const pdfViewer = document.getElementById("pdf-viewer");
     const mainHeading = document.getElementById("main-heading");
-    
-    pdfViewer.style.display = "block";
-    mainHeading.style.display = "none";
-    pdfViewer.src = pdfFile;
-}
+    const pdfLinks = document.querySelectorAll(".pdf-link");
+    const closeBtn = document.getElementById("close-btn");
 
-function closePdfViewer() {
-    const pdfViewer = document.getElementById("pdf-viewer");
-    const mainHeading = document.getElementById("main-heading");
+    toggleBtn.addEventListener("click", function() {
+        sidebar.classList.toggle("expanded");
+        if (sidebar.classList.contains("expanded")) {
+            pdfViewer.style.left = "200px";
+            pdfViewer.style.width = "calc(100vw - 200px)";
+        } else {
+            pdfViewer.style.left = "64px";
+            pdfViewer.style.width = "calc(100vw - 64px)";
+        }
+    });
+
+    pdfLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const pdfFile = this.getAttribute("data-pdf");
+            pdfViewer.src = pdfFile;
+            pdfViewer.style.display = "block";
+            mainHeading.style.display = "none";
+        });
+    });
+
+    closeBtn.addEventListener("click", function() {
+        pdfViewer.style.display = "none";
+        mainHeading.style.display = "block";
+        pdfViewer.src = "";
+    });
+});
     
     pdfViewer.style.display = "none";
     mainHeading.style.display = "block";
