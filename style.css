@@ -44,7 +44,7 @@ body.dark-mode {
 }
 
 .sidebar.expanded #pdf-list {
-    display: block;
+    display: block !important;
 }
 
 #pdf-list li {
@@ -61,15 +61,16 @@ body.dark-mode {
 }
 
 /* Close Button in Sidebar */
-#pdf-list li:last-child {
+#close-btn {
     margin-top: 20px;
     color: red;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
+    display: none;
 }
 
-#pdf-list li:last-child:hover {
+#close-btn:hover {
     text-decoration: underline;
 }
 
