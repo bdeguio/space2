@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space</title>
+    <title>Black Webpage with Sidebar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
     <div class="sidebar" id="sidebar">
         <button class="menu-button" onclick="toggleSidebar()">☰</button>
-        <ul id="pdf-list" style="list-style: none; padding: 10px; display: none;">
+        <ul id="pdf-list" style="list-style: none; padding: 10px; display: none; text-align: center;">
             <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('2024ltr.pdf')">2024</a></li>
             <li style="margin-bottom: 10px;"><a href="#" onclick="loadPdf('2023ltr.pdf')">2023</a></li>
-            <li id="close-btn" style="margin-top: 20px; color: red; font-weight: bold; text-align: center; cursor: pointer; display: none;" onclick="closePdfViewer()">Close</li>
+            <li id="close-btn" style="margin-top: 10px; color: red; font-weight: bold; cursor: pointer; display: none;">Close</li>
         </ul>
     </div>
     <div class="main-content" id="main-content">
